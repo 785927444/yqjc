@@ -1,0 +1,3 @@
+<template>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="16" height="16" viewBox="0 0 16 16"><defs><clipPath id="master_svg0_6_89579"><rect x="0" y="0" width="16" height="16" rx="0"/></clipPath></defs><g clip-path="url(#master_svg0_6_89579)"><g><path d="M14,3C14,2.447715,13.5523,2,13,2L3,2C2.447716,2,2,2.447715,2,3L2,13C2,13.5523,2.447715,14,3,14L13,14C13.5523,14,14,13.5523,14,13L14,3ZM8.999929999999999,8.00001L6.20703,5.20711L6.91414,4.5L10.41414,8.00001L6.91414,11.5L6.20703,10.79289L8.999929999999999,8.00001Z" fill-rule="evenodd" fill="#CEDFFD" fill-opacity="1"/></g></g></svg>
+</template>
