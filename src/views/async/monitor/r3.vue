@@ -35,7 +35,7 @@
 	const setChart = async() => {
 		let chart = 'Line'
 		let id = 'Line_loadData'
-		let attr = {min: 0, /*max: 100,*/ extent: 4, colorList: [], legendArr: [],legendShow: true, labelShow: false,	areaShow: true,	y_name: 'MW', tool_dw: 'MW', tool_name_x: '日期：', tool_name_y: '数值：'}
+		let attr = {min: 0, /*max: 100,*/ extent: 4, colorList: [], tooltip: true, legendArr: [],legendShow: true, labelShow: false,	areaShow: true,	y_name: 'MW', tool_dw: 'MW', tool_name_x: '日期：', tool_name_y: '数值：'}
 		let data = publicStore._public.loadData
 		let series = {data: []}
 		series = data.map(v => {

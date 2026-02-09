@@ -6,24 +6,10 @@
 		<div class="ww100 hh100 flex-sc absolute pl35">
 			<!-- <span class="fw flex1 ptb5">总体情况</span> -->
 			<div class="flex-ec flex1">
-				<el-select v-model="state.station" placeholder="请选择" style="width: 30%" clearable filterable @change="state.sensor_id=''">
-					<el-option label="全部" value="-1" />
-					<el-option v-for="(v, i) in state.stations" :key="v.id" :label="v.name" :value="v.id" />
+				<el-select v-model="publicStore.distributId" placeholder="请选择" style="width: 30%" clearable filterable>
+					<el-option label="全部" value="0" />
+					<el-option v-for="(v, i) in publicStore._public?.stations?publicStore._public.stations:[]" :key="v.id" :label="v.station_name" :value="v.id" />
 				</el-select>
-				<!-- <el-tree-select v-model="state.distributId" placeholder="请选择" 
-				@change="changeSelect"
-				ref="treeRef" 
-				class="w50x5 c8" 
-				:default-expand-all="true" 
-				highlight-current 
-				accordion 
-				clearable 
-				filterable 
-				check-strictly 
-				:render-after-expand="false"
-				:data="configStore.stationList" 
-				:props="defaultProps" 
-				node-key="id" /> -->
 			</div>
 		</div>
 	</div>

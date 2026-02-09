@@ -1,34 +1,55 @@
 <template>
   <div class="layout-col">
-    <!-- 标题 -->
-	<div class="h40 ww100 flex-sc relative mb10">
-		<img class="hh100" src="@/assets/imgs/title.png" />
-		<div class="ww100 hh100 flex-sc absolute pl35">
-			<span class="fw flex1 ptb5">光伏发电总体情况</span>
-			<div class="flex-ec flex1"></div>
-		</div>
-	</div>
-    <div class="flex1 ww100 flex-col-cc ba1 plr20 i15">
-		<div>光伏总发电</div>
-		<div class="flex-cc ww100 relative ptb10">
-			<img class="ww100" src="@/assets/imgs/v1.png" />
-			<div class="ww100 absolute-cc flex-bc p20">
-			   <div class="flex1 flex-col-cs">
-				   <span>屋顶光伏</span>
-				   <span class="mt8 f12"><span class="white mr5 f16">30114</span>MWh</span>
-			   </div>
-         <div class="flex-col-cb">
-           <span class="mb8 f12 tc"><span class="white mr5 f16">40152</span>MWh</span>
-				   <img class="h70" src="@/assets/imgs/v2.png" />
-			   </div>
-			   <div class="flex1 flex-col-ce">
-				   <span>其它光伏</span>
-				   <span class="mt8 f12"><span class="white mr5 f16">10038</span>MWh</span>
-			   </div>
+		<!-- 标题 -->
+		<aa-title title="光伏总体情况"><template #right-content></template></aa-title>
+		<!-- 内容 -->
+		<div class="layout-col ba1 p20 i15">
+			<div class="ww100 tc flex-bc">
+				<div class="flex-sc">
+					<span>总发电量</span>
+					<span class="f12"><span class="white mlr5 f14">{{publicStore._public.homeInfo&&publicStore._public.homeInfo.Total_Output?Math.floor((publicStore._public.homeInfo.Total_Output*100))/100:'0'}}</span>kWh</span>
+				</div>
+				<div class="f16">装机总容量</div>
+				<div class="flex-sc">
+					<span>总有功功率</span>
+					<span class="f12"><span class="white mlr5 f14">{{publicStore._public.homeInfo&&publicStore._public.homeInfo.pv_active_power?Math.floor((publicStore._public.homeInfo.pv_active_power*100))/100:'0'}}</span>kW</span>
+				</div>
+			</div>
+			<div class="flex-cc ww100 relative ptb10">
+				<img class="ww100" src="@/assets/imgs/zz-2.png" />
+				<div class="ww100 absolute-cc flex-bc p20">
+					<div class="flex1 flex-col-cs">
+						<div class="flex-col-sc">
+						  <span>上网总发电量</span>
+						  <span class="f12 mt8"><span class="white mlr5 f14">{{publicStore._public.homeInfo&&publicStore._public.homeInfo.Total_Output?Math.floor((publicStore._public.homeInfo.Total_Output*100*0.1))/100:'0'}}</span>kWh</span>
+						</div>
+						<div class="flex-col-sc mt12">
+						  <span>自用总发电量</span>
+						  <span class="f12 mt8"><span class="white mlr5 f14">{{publicStore._public.homeInfo&&publicStore._public.homeInfo.Total_Output?Math.floor((publicStore._public.homeInfo.Total_Output*100*0.9))/100:'0'}}</span>kWh</span>
+						</div>
+					</div>
+					<div class="flex-col-cb">
+						<span class="mb10 f12 tc">
+							<!-- <span class="white mr5 f18">{{publicStore._public.homeInfo&&publicStore._public.homeInfo.Total_apparent_power?Math.floor((publicStore._public.homeInfo.Total_apparent_power*100))/100:'0'}}</span> -->
+							<span class="white mr5 f18">320.67</span>
+						kW</span>
+						<img class="w80" src="@/assets/imgs/zz-1.png" />
+					</div>
+					<div class="flex1 flex-col-ce">
+						<div class="flex-col-sc">
+						  <span>上网总盈利</span>
+						  <span class="f12 mt8"><span class="white mlr5 f14">{{publicStore._public.homeInfo&&publicStore._public.homeInfo.Total_Output?Math.floor((publicStore._public.homeInfo.Total_Output*100*0.1*0.4009))/100:'0'}}</span>元</span>
+						</div>
+						<div class="flex-col-sc mt12">
+						  <span>自用总节省</span>
+						  <span class="f12 mt8"><span class="white mlr5 f14">{{publicStore._public.homeInfo&&publicStore._public.homeInfo.Total_Output?Math.floor((publicStore._public.homeInfo.Total_Output*100*0.9*0.933))/100:'0'}}</span>元</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="f16">年累计减少碳排放(tCO2e)<span class="white ml5">52078.7</span></div>
-    </div>
+		<!-- 底部 -->
+		<aa-foot></aa-foot>
   </div>
 </template>
 

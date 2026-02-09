@@ -56,7 +56,7 @@
   const init = async(key) => {
     if(!key) state.devices.getDevices();
     state.devices.getDevicesData();
-    state.devices.getDevicesBar('DevicesDailyOutput', [{name: '发电量', code: 'Daily_Output', data: []}]);
+    state.devices.getDevicesBar('DevicesDailyOutput', [{name: '发电量', code: 'Daily_Output', data: []}],  '1');
     state.devices.getDevicesLine('DevicesOutputPower', [{name: '实际功率', code: 'Output_Power', data: []}]);
   }
 

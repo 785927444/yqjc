@@ -82,6 +82,8 @@ const publicStore = defineStore('public', {
 		// 三维
 		viewer: {},
 		mapAdcodes: [],
+		// 当前站点
+		distributId: '',
 	}),
 	actions: {
 	patch(contxt:any) {

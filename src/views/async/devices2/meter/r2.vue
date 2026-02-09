@@ -15,7 +15,7 @@
             state.active!='All'&&state.bay=='All'&&!state.airName?publicStore._public.homeDevices.filter(a =>a['2022']==state.active) : 
             state.active=='All'&&state.bay=='All'&&state.airName?publicStore._public.homeDevices.filter(a => a.name.indexOf(state.airName)!=-1) :
             state.active!='All'&&state.bay=='All'&&state.airName?publicStore._public.homeDevices.filter(a =>a['2022']==state.active&&a.name.indexOf(state.airName)!=-1) :
-            state.active=='All'&&state.bay=='All'&&!state.airName?publicStore._public.homeDevices : [] : []" :key="i" @click.stop="toPath('/detail', {id: v.id, stationNum: v.stationNum, type: v.type, code: 'All_active_electric', code2: 'day_electrlc'})">
+            state.active=='All'&&state.bay=='All'&&!state.airName?publicStore._public.homeDevices : [] : []" :key="i" @click.stop="toPath('/detail', {id: v.id, stationNum: v.stationNum, type: v.type, code: 'Total_active_power', code2: 'day_electrlc'})">
                 <div class="ww100 flex-col rad6 i15 bs">
                     <div class="flex-col ww100 p15">
                         <div class="flex1 flex-sc">
@@ -39,7 +39,7 @@
                         <div class="flex1 tr">{{v.power_factor?Math.floor((v.power_factor*100))/100 : 0}}</div>
                         </div>
                         <div class="flex1 flex-sc mt12">
-                        <div class="">日电能（kWh）</div>
+                        <div class="">昨日电能（kWh）</div>
                         <div class="flex1 tr">{{v.day_electrlc?Math.floor((v.day_electrlc*100))/100 : 0}}</div>
                         </div>
                         <div class="flex1 flex-sc mt12">
